@@ -1,0 +1,420 @@
+/* Custom styling for Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: rgb(123, 0, 218) !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: rgb(128, 230, 255) !important;
+}
+
+/* --------------------------------------------------------------------------------------------------------*/
+
+/* General carousel styling for slide 1 and 2*/
+.carousel-container,
+.carousel-container-small,
+.carousel-container-small2 {
+    display: flex;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+    gap: 40px;
+    position: relative;
+}
+
+/* General text styling for slide 1, 2, and 3*/
+.carousel-text,
+.carousel-text-inline,
+.carousel-text-top,
+.carousel-text-top2,
+.carousel-text3,
+.carousel-text-top3 {
+    font-family: 'Bubblegum Sans', cursive;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* General image styling for slide 1 and 2*/
+.carousel-image,
+.carousel-image-left-small,
+.carousel-image-right-small,
+.carousel-image-small {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    position: relative;
+}
+
+.carousel-text a,
+.carousel-text-top a,
+.carousel-text-top3 a {
+    color: rgb(146, 104, 201);
+    text-decoration: none;
+}
+
+.carousel-text a:hover,
+.carousel-text-top a:hover,
+.carousel-text-top3 a:hover {
+    color: rgb(83, 44, 134);
+}
+
+/*------------------------------------------------------------------------------------------------------------------------   */
+
+/* styling for slide 1*/
+.carousel-text {
+    position: absolute;
+    top: 13%;
+    left: 22%;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 26px;
+    width: 12%;
+    height: 50%;
+}
+
+/* Carousel for slide 1 for when screen becomes too small--not displayed*/
+.carousel-slide-vertical {
+    display: none;
+}
+
+/* -----------------------------------------------------------------------------------------------------*/
+
+/*General carousel styling for slide 2*/
+.carousel-multiple-images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel-image-left,
+.carousel-image-right {
+    width: 25%;
+    height: 550px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+}
+
+.carousel-image-left {
+    margin-left: 100px;
+}
+
+.carousel-image-right {
+    margin-right: 100px;
+}
+
+.carousel-text-inline {
+    padding-top: 80px !important;
+    width: 37%;
+    margin: 0 20px;
+    background-color: rgb(236, 218, 253);
+    border-radius: 30px;
+}
+
+.carousel-text-inline a {
+    margin: 0;
+    font-size: 2.0em;
+    color: rgb(83, 44, 134);
+    text-decoration: none;
+}
+
+.carousel-text-inline a:hover {
+    color: rgb(156, 109, 156);
+}
+
+.carousel-text-inline p {
+    font-size: 1.8em !important;
+}
+
+.inline-icon {
+    cursor: pointer;
+    margin-top: 50px;
+    width: 50px;
+    height: auto;
+    padding: 10px;
+}
+
+.inline-icon:hover {
+    background-color: rgb(255, 215, 255);
+    border-radius: 30px;
+}
+
+/*Carousel for slide 2 for when screen becomes too small*/
+.carousel-image-combined {
+    display: none;
+}
+
+/*Carousel for slide 2 for when screen becomes even smaller*/
+.carousel-slide-vertical2 {
+    display: none;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+
+/*General Carousel Styling for Slide 3*/
+
+.carousel-multiple-images3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 15px 0px 15px;
+}
+
+.carousel-image3 {
+    flex: 1;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.carousel-text-top3 {
+    width: calc(100% -30px);
+    height: 150px;
+    padding: 10px 20px;
+    font-size: 26px;
+    background-color: rgba(255, 219, 250, 0.5);
+    border-radius: 30px;
+    margin: 0px 20px;
+}
+
+.carousel-text-top3 a {
+    line-height: 1;
+}
+
+.carousel-text-top3 p {
+    font-size: 25px !important;
+}
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+/* Media queries to control layout for when screen shrinks or expands*/
+
+/* Gradually decrease size so that the text stays within the poster image of slide 1*/
+@media (max-width: 1600px) {
+    .carousel-text {
+        width: 14%;
+    }
+
+}
+
+@media (max-width: 1400px) {
+    .carousel-text {
+        width: 15%;
+    }
+
+    /* Change layout of carousel for slide 3-- 6 images*/
+    .carousel-image3 {
+        flex: 0 0 15.22%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .carousel-text {
+        width: 16%;
+    }
+
+    /* Change layout of carousel for slide 3-- 5 images*/
+    .carousel-image3 {
+        flex: 0 0 18.45%;
+    }
+
+    .carousel-text-top3 {
+        font-size: 25px;
+    }
+
+    .carousel-text-top3 p {
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width: 1250px) {
+    .carousel-text {
+        width: 17%;
+    }
+
+    /* Change layout of carousel for slide 2 by combining the left and right photos set into 1 combined set */
+    .carousel-image-left {
+        display: none;
+    }
+
+    .carousel-image-right {
+        display: none;
+    }
+
+    .carousel-image-combined {
+        display: flex;
+        width: 40%;
+        height: 550px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 30px;
+    }
+
+    .carousel-text-inline {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .carousel-text {
+        width: 18%;
+    }
+}
+
+@media (max-width: 1150px) {
+    .carousel-text {
+        width: 19%;
+    }
+
+    /* Change layout of carousel for slide 3-- 4 images*/
+    .carousel-image3 {
+        flex: 0 0 23.25%;
+    }
+
+    .carousel-text-top3 {
+        font-size: 22px;
+    }
+
+    .carousel-text-top3 p {
+        font-size: 22px !important;
+    }
+}
+
+@media (max-width: 1100px) {
+    .carousel-text {
+        width: 20%;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    /* Change layout of carousel for slide 1 by stacking the photo and text vertically */
+    .carousel-text {
+        display: none;
+    }
+
+    .carousel-container {
+        display: none;
+    }
+
+    .carousel-slide-vertical {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 500px;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .carousel-text-top {
+        width: 100%;
+        height: 150px;
+        padding: 10px;
+        font-size: 24px;
+        background-color: rgba(255, 219, 250, 0.5);
+        border-radius: 30px;
+    }
+
+    /* Change layout of carousel for slide 3-- 3 images*/
+    .carousel-image3 {
+        flex: 0 0 31.33%;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    /* Change layout of carousel for slide 2 by stacking the text and photo vertically*/
+    .carousel-multiple-images {
+        display: none;
+    }
+
+    .carousel-slide-vertical2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 500px;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .carousel-text-top2 {
+        width: 100%;
+        height: 150px;
+        padding: 10px;
+        font-size: 22px;
+        background-color: rgb(236, 218, 253);
+        border-radius: 30px;
+    }
+
+    .carousel-text-top2 a {
+        color: rgb(83, 44, 134);
+        text-decoration: none;
+        line-height: 1;
+    }
+
+    .carousel-text-top2 a:hover {
+        color: rgb(156, 109, 156);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    /* Change layout of carousel for slide 1 by stacking the text and photo vertically and removing one photo */
+    .carousel-text {
+        display: none;
+    }
+
+    .carousel-container {
+        display: none;
+    }
+
+    #person-small {
+        display: none;
+    }
+
+    .carousel-slide-vertical {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 500px;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .carousel-text-top {
+        font-size: 22px;
+    }
+
+    /* Change layout of carousel for slide 3-- 2 images*/
+    .carousel-image3 {
+        flex: 0 0 47.2%;
+    }
+
+    .carousel-text-top3 {
+        font-size: 20px;
+    }
+
+    .carousel-text-top3 p {
+        font-size: 20px !important;
+    }
+}
+
+/* Change layout of carousel for slide 3-- smaller font size*/
+@media (max-width: 600px) {
+    .carousel-text-top3 {
+        font-size: 18px;
+    }
+
+    .carousel-text-top3 p {
+        font-size: 17px !important;
+    }
+}

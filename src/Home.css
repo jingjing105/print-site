@@ -1,0 +1,20 @@
+/* Home.css */
+.home {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.home h1 {
+  font-size: 3rem;
+  color: #333;
+}
+
+.home p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+body {
+  background: rgb(228, 212, 255);
+}
