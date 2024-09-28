@@ -1,10 +1,9 @@
-// Carousel.js
 import React, { useEffect, useState } from 'react';
 import './Carousel.css';
-import { Swiper, SwiperSlide } from 'swiper/react';  // Import Swiper core
-import 'swiper/css';  // Import Swiper styles
-import 'swiper/css/navigation';  // Import navigation module styles
-import 'swiper/css/pagination';  // Import pagination module styles
+import { Swiper, SwiperSlide } from 'swiper/react';  
+import 'swiper/css';  
+import 'swiper/css/navigation';  
+import 'swiper/css/pagination';  
 import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
@@ -132,7 +131,7 @@ const Carousel = () => {
                 setCurrentImages(imageList.slice(newIndex, newIndex + 7).concat(imageList.slice(0, Math.max(0, newIndex + 7 - imageList.length))));
                 return newIndex;
             });
-        }, 3000); // Change image every 5 seconds
+        }, 2000); // Change image every 2 seconds
 
         return () => clearInterval(interval); // Cleanup on unmount
     }, []);

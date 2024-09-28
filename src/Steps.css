@@ -1,0 +1,84 @@
+.steps-container h2 {
+    font-size: 35px;
+    font-family: 'Bubblegum Sans', cursive;
+    text-align: center;
+    color: rgb(49, 77, 206);
+}
+
+.steps-container {
+    text-align: center;
+    margin: 10px 0;
+    padding: 50px 0px;
+    background-color: rgb(227, 248, 255);
+
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.step-title {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.make-poster-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-family: 'Bubblegum Sans', cursive;
+    background-color: rgb(54, 75, 172);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.make-poster-button:hover {
+    background-color: #8978e9;
+}
+
+
+/*------------------------------------------------------------------------------------------*/
+
+@media (max-width: 1500px) {
+    .step-icon {
+        width: 55px;
+        height: auto;
+    }
+
+    .step-title {
+        font-size: 18px !important;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .steps {
+        flex-direction: column;
+    }
+
+    .step-icon {
+        width: 30px;
+        height: auto;
+    }
+
+    .step-title {
+        font-size: 12px !important;
+    }
+}
