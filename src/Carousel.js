@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Carousel.css';
-import { Swiper, SwiperSlide } from 'swiper/react';  
-import 'swiper/css';  
-import 'swiper/css/navigation';  
-import 'swiper/css/pagination';  
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
@@ -11,20 +11,40 @@ import 'swiper/swiper-bundle.css';
 const Carousel = () => {
 
     const leftImages = [
-        '/images/oreo.JPG',
-        '/images/person.jpg'
+        '/images/person.JPG',
+        '/images/person2.jpg',
+        '/images/person3.jpg',
+        '/images/person4.jpg',
+        '/images/person5.jpg',
+        '/images/person6.jpg',
+        '/images/person7.jpg',
+        '/images/person8.jpg'
     ];
 
     const rightImages = [
         '/images/curly.jpg',
         '/images/katra.jpg',
+        '/images/curly3.JPG',
+        '/images/katra2.JPG',
+        '/images/curly2.JPG',
+        '/images/puppy.JPG',
         '/images/oreo2.JPG',
-        '/images/katra2.JPG'
+        '/images/oreo.JPG'
     ];
 
     const combinedImages = [
         '/images/oreo.JPG',
         '/images/person.jpg',
+        '/images/person2.jpg',
+        '/images/curly3.JPG',
+        '/images/person3.jpg',
+        '/images/person4.jpg',
+        '/images/person5.jpg',
+        '/images/curly2.JPG',
+        '/images/person6.jpg',
+        '/images/puppy.JPG',
+        '/images/person7.jpg',
+        '/images/person8.jpg',
         '/images/curly.jpg',
         '/images/katra.jpg',
         '/images/oreo2.JPG',
@@ -32,15 +52,25 @@ const Carousel = () => {
     ];
 
     const leftSmallImages = [
-        '/images/oreo.JPG',
-        '/images/person.jpg'
+        '/images/person.JPG',
+        '/images/person2.jpg',
+        '/images/person3.jpg',
+        '/images/person4.jpg',
+        '/images/person5.jpg',
+        '/images/person6.jpg',
+        '/images/person7.jpg',
+        '/images/person8.jpg'
     ];
 
     const rightSmallImages = [
         '/images/curly.jpg',
         '/images/katra.jpg',
+        '/images/curly3.JPG',
+        '/images/katra2.JPG',
+        '/images/curly2.JPG',
+        '/images/puppy.JPG',
         '/images/oreo2.JPG',
-        '/images/katra2.JPG'
+        '/images/oreo.JPG'
     ];
 
     const imageList = [

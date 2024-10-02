@@ -1,0 +1,131 @@
+.photography-section {
+  text-align: center;
+  background-color: rgb(236, 218, 253);
+  height: 650px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.photography-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0px 15px;
+}
+
+.photography-section h2 {
+  font-family: 'Bubblegum Sans', cursive;
+  font-weight: bold;
+  text-align: center;
+  font-size: 38px;
+  color: rgb(135, 75, 153);
+  margin-top: 80px;
+  padding: 0px 15px;
+}
+
+.photography-section p {
+  font-family: 'Bubblegum Sans', cursive;
+  text-align: center;
+  font-size: 27px !important;
+}
+
+.photography-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photography-item img {
+  width: 300px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.photography-caption {
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  color: rgb(104, 104, 104)
+}
+
+.photographer-button {
+  margin-top: 30px;
+  padding: 10px 50px;
+  font-family: 'Bubblegum Sans', cursive;
+  background-color: rgb(135, 75, 153);
+  color: white;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.photographer-button:hover {
+  background-color: rgb(241, 182, 228);
+}
+
+/*----------------------------------------------------------------------*/
+@media(max-width: 1400px) {
+  .photography-item img {
+    width: 270px;
+  }
+}
+
+@media(max-width: 1300px) {
+  .photography-item img {
+    width: 250px;
+  }
+
+  .photography-section {
+    height: auto;
+  }
+
+  .photography-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 900px) {
+  .photography-item img {
+    width: 230px;
+  }
+
+  .photography-caption {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 800px) {
+  .photography-section h2 {
+    font-size: 34px;
+  }
+
+  .photography-section p {
+    font-size: 25px !important;
+  }
+
+  .photography-item img {
+    width: 210px;
+  }
+
+  .photography-caption {
+    font-size: 15px;
+  }
+}
+
+@media(max-width: 550px) {
+.photography-section h2 {
+    font-size: 30px;
+  }
+
+  .photography-section p {
+    font-size: 23px !important;
+  }
+  .photography-item img {
+    width: 190px;
+  }
+}
