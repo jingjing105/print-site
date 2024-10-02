@@ -1,0 +1,201 @@
+.footer {
+    text-align: center;
+}
+
+/*signup */
+.newsletter-signup {
+    background-color: rgb(166, 166, 226);
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 0px;
+}
+
+.newsletter-signup label {
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: bold;
+    color: rgb(62, 17, 88)
+}
+
+.newsletter-signup input {
+    height: 40px;
+    width: 600px;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-signup input:focus {
+    border-color: pink;
+    outline: none;
+}
+
+.newsletter-signup button {
+    border-radius: 10px;
+    padding: 17px 20px;
+    background-color: rgb(255, 212, 238);
+    color: rgb(62, 17, 88);
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer
+}
+
+.newsletter-signup button:hover {
+    background-color: rgb(190, 213, 255);
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/*links*/
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.footer-links a {
+    color: rgb(100, 98, 100);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: rgb(140, 99, 163);
+}
+
+/*socials*/
+.media-payment-delivery {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.media-payment-delivery>div {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.media-payment-delivery h3 {
+    margin: 10px 0;
+    color: rgb(100, 98, 100);
+    font-size: 15px;
+}
+
+.media-payment-delivery img {
+    width: 30px;
+    height: auto;
+    margin: 5px;
+}
+
+/*footer*/
+.footer-content p {
+    font-size: 15px !important;
+}
+
+/*-------------------------------------------------------------------------*/
+@media(max-width: 1100px) {
+    .newsletter-signup label {
+        font-size: 20px;
+        margin-left: 15px;
+    }
+
+    .newsletter-signup input {
+        height: 40px;
+        width: 500px;
+        border-radius: 10px;
+        padding: 5px;
+        font-size: 15px;
+    }
+
+    .newsletter-signup button {
+        margin-right: 15px;
+    }
+}
+
+@media(max-width: 1000px) {
+    .newsletter-signup label {
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
+    .newsletter-signup input {
+        height: 40px;
+        width: 450px;
+        border-radius: 10px;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .newsletter-signup button {
+        margin-right: 15px;
+    }
+
+    .footer-links {
+        gap: 10px;
+    }
+
+    .footer-links a {
+        font-size: 14px;
+    }
+
+    .footer-content p {
+        font-size: 13px !important;
+    }
+}
+
+@media(max-width: 500px) {
+    .newsletter-signup label {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .newsletter-signup input {
+        height: 40px;
+        width: 450px;
+        border-radius: 10px;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .newsletter-signup button {
+        margin-right: 15px;
+        font-size: 12px;
+        padding: 18px 18px;
+    }
+
+    .footer-links {
+        gap: 10px;
+    }
+
+    .media-payment-delivery h3 {
+        font-size: 14px;
+    }
+
+    .media-payment-delivery img {
+        width: 25px;
+        height: auto;
+    }
+
+    .footer-content p {
+        font-size: 12px !important;
+    }
+}

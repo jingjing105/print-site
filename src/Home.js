@@ -3,6 +3,7 @@ import Carousel from './Carousel';
 import Steps from './Steps';
 import PosterCarousel from'./PosterCarousel';
 import Photographer from './Photographer';
+import Footer from './Footer';
 import './Home.css';
 
 const Home = () => {
@@ -15,6 +16,8 @@ const Home = () => {
       <PosterCarousel />
       <hr/>
       <Photographer />
+      <hr />
+      <Footer/>
 
     </div>
   );
