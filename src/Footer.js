@@ -22,9 +22,9 @@ const Footer = () => {
                 <div class="media-payment-delivery">
                     <div class="social-media">
                         <h3>Get in Touch</h3>
-                        <a href="https://facebook.com"><img src="/images/facebook.png" alt="Facebook" /></a>
-                        <a href="https://twitter.com"><img src="/images/twitter.png" alt="X" /></a>
-                        <a href="https://instagram.com"><img src="/images/instagram.png" alt="Instagram" /></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><img src="/images/facebook.png" alt="Facebook" /></a>
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer"><img src="/images/twitter.png" alt="X" /></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><img src="/images/instagram.png" alt="Instagram" /></a>
                     </div>
                     <div class="secure-payment">
                         <h3>Secure Payment</h3>

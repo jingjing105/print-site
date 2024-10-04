@@ -68,7 +68,7 @@ const Navbar = () => {
                     <a href="/help" className="help-btn">
                         <img src="/images/messenger.png" alt="Help Icon" className="icon" />
                     </a>
-                    <a href="/signin" className="signin-btn">
+                    <a href="/login" className="signin-btn">
                         <img src="/images/user.png" alt="Sign In Icon" className="icon" />
                     </a>
                     <a href="/workspace" className="folder-btn">
