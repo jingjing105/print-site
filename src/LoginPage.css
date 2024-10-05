@@ -1,6 +1,7 @@
 .login-page {
     display: flex;
     height: 100vh;
+    background-color: #f0f4f8;
 }
 
 .left-side {
@@ -9,36 +10,33 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url('/public/images/loginbg.jpg');
+    background-image: url('/public/images/signinbg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
 }
 
 .text-box {
-    background-color: rgba(253, 217, 223, 0.6);
-    padding: 30px 50px;
-    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 100px 50px;
+    border-radius: 200px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 60px;
 }
 
 .left-side h1 {
-    font-family: 'Bubblegum Sans', cursive;
-    font-weight: bold;
-    font-size: 60px;
-    color: rgb(53, 38, 70);
+    font-size: 45px;
+    color: rgb(0, 0, 0);
     margin: 5px 0;
     text-shadow: 2px 2px px rgba(0, 0, 0, 0.5);
 }
 
 .left-side h2 {
-    font-size: 40px;
-    color: #5e3bbe;
-    font-family: 'Bubblegum Sans', cursive;
+    font-size: 30px;
+    color: #d67b9e;
     margin: 5px 0;
 }
 
@@ -46,6 +44,17 @@
     width: 400px;
     height: auto;
     margin-top: 60px;
+    margin-left: 150px;
+}
+
+.logo-top {
+    position: absolute;
+    top: 0px;
+    left: 92%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: auto;
+    margin-top: 30px;
 }
 
 .right-side {
@@ -53,15 +62,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fce3e3;
+    background-color: #ffffff;
 }
 
 .login-box {
     width: 400px;
     padding: 50px;
-    background-color: rgb(255, 230, 235);
-    box-shadow: 0 2px 10px rgba(7, 1, 37, 0.4);
-    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
 }
 
 /*--------------------------------------------------------*/
@@ -82,8 +91,7 @@
     gap: 15px;
 }
 
-.google-signin,
-.apple-signin {
+.google-signin {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,29 +103,17 @@
     cursor: pointer;
     width: 100%;
     border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(7, 1, 37, 0.4);
 }
 
-.google-signin img,
-.apple-signin img {
+.google-signin img {
     width: 20px;
     height: 20px;
     margin-right: 20px;
 }
 
-.google-signin:hover,
-.apple-signin:hover {
-    background-color: rgba(244, 122, 255, 0.2);
-}
-
-.google-signin {
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(7, 1, 37, 0.4);
-}
-
-.apple-signin {
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(7, 1, 37, 0.4);
-
+.google-signin:hover {
+    background-color: rgba(225, 209, 226, 0.3);
 }
 
 /*-------------------------------------------------------------------------------*/
@@ -156,29 +152,27 @@
 
 .login-box h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 35px;
-    color: rgb(53, 38, 70);
+    color: rgb(221, 131, 158);
 }
 
 .login-box form label {
     display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #5e3bbe;
+    color: #000000;
 }
 
 .login-box form input {
     width: 100%;
-    padding: 10px 5px;
+    padding: 12px 8px;
     margin-bottom: 20px;
-    border: 2px solid #ba96ca;
+    border: 1px solid #cccccc;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .login-box form input:focus {
-    border-color: hsl(217, 100%, 85%);
+    border-color: hsl(320, 100%, 85%);
     outline: none;
 }
 
@@ -239,30 +233,41 @@
 
 /*-----------------------------------------------------------*/
 
-.login-box form label[for="forgot-password"] {
+.forgot-password {
+    background-color: transparent;
+    color: rgb(101, 101, 250);
+    border: none;
     font-size: 14px;
-    text-align: right;
-    margin-bottom: 40px;
-    margin-top: 20px;
-    margin-left: auto;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    margin: 0;
 }
 
-.login-box form label[for="forgot-password"] a {
-    color: rgb(101, 101, 250);
+.forgot-password:hover {
+    color: rgb(214, 87, 197);
     text-decoration: none;
 }
 
-.login-box form label[for="forgot-password"] a:hover {
-    text-decoration: underline;
-    color: rgb(214, 87, 197);
+/*--------------------------------------------------------------*/
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
 
 /*--------------------------------------------------------------*/
-.login-box form button {
+.sign-in-btn {
     width: 100%;
     padding: 15px;
-    background-color: #5a67d8;
+    background-color: rgb(224, 146, 169);
+    ;
     color: white;
     border: none;
     border-radius: 10px;
@@ -272,7 +277,7 @@
     box-shadow: 0 2px 10px rgba(7, 1, 37, 0.4);
 }
 
-.login-box form button:hover {
+.sign-in-btn:hover {
     background-color: rgb(211, 151, 204);
 }
 
@@ -296,30 +301,53 @@
 }
 
 /*--------------------------------------------------------------------*/
-
-@media screen and (max-width: 1000px) {
-    .login-page {
-        flex-direction: column;
-    }
+@media screen and (max-width: 1200px) {
 
     .left-side {
         display: none;
     }
 
     .right-side {
-        flex: none;
-        width: 100%;
+        background-image: url('/public/images/signinbg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         height: 100vh;
-        justify-content: center;
-        align-items: center;
+    }
+
+    .login-page {
+        flex-direction: column;
     }
 
     .login-box {
-        width: 100%;
-        max-width: 400px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo-top {
+        top: 50px;
+        left: 75%;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .logo-top {
+        top: 50px;
+        left: 78%;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .login-box {
         padding: 20px;
-        height: auto;
-        border-radius: 0;
-        box-shadow: none;
+        margin-left: 35px;
+    }
+
+    .logo-top {
+        top: 50px;
+        left: 90%;
+        margin-top: 30px;
     }
 }
