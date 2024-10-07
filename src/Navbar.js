@@ -105,7 +105,7 @@ const Navbar = () => {
                 <ul className="side-navbar-links">
                     <hr className="sidebar-divider" />
                     <li>
-                        <a href="/signin">Sign In</a>
+                        <a href="/login">Sign In</a>
                     </li>
                     <li>
                         <a href="/workspace">My Projects</a>

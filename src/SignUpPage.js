@@ -36,7 +36,7 @@ const SignUpPage = () => {
 
   const validateEmailWithAPI = async (email) => {
     try {
-      const response = await axios.get(`https://emailvalidation.abstractapi.com/v1/?api_key=${ABSTRACT_API_KEY}&email=${email}`);
+      const response = await axios.get(`https://emailvalidation.abstractapi.com/v1/?api_key=${process.env.REACT_APP_ABSTRACT_API_KEY}&email=${email}`);
       if (response.data && response.data.is_valid_format && response.data.is_smtp_valid) {
         return response.data.is_valid_format.value && response.data.is_smtp_valid.value;
       } else {

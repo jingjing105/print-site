@@ -1,0 +1,556 @@
+.photographer-page .navbar {
+    position: fixed;
+    z-index: 1000;
+}
+
+.photographer-page html,
+.photographer-page body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+.photographer-page {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.photographer-page section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/*------------------------------------------------------------------------------*/
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.hero-text {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    margin: 0;
+    font-size: 3.0rem;
+    text-shadow:
+        2px 2px 0 rgba(137, 174, 180, 0.8),
+        -2px -2px 0 rgba(137, 174, 180, 0.8),
+        2px -2px 0 rgba(137, 174, 180, 0.8),
+        -2px 2px 0 rgba(137, 174, 180, 0.8);
+}
+
+.hero-text p {
+    margin-top: 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgb(15, 133, 133);
+    text-shadow:
+        2px 2px 0 rgba(255, 255, 255, 0.8),
+        -2px -2px 0 rgba(255, 255, 255, 0.8),
+        2px -2px 0 rgba(255, 255, 255, 0.8),
+        -2px 2px 0 rgba(255, 255, 255, 0.8);
+}
+
+.scroll-buttons {
+    position: absolute;
+    top: 65%;
+    left: 150px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 10;
+}
+
+.scroll-button {
+    background-color: #7cc7c1;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-button:hover {
+    background-color: #5d8078;
+}
+
+.scroll-down {
+    width: 90px;
+    margin-top: 850PX;
+}
+
+/*---------------------------------------------------------------------------*/
+/* About Section */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: #d4f5f5;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.about-section h2 {
+    font-size: 2.6rem;
+    color: #244e4e;
+    margin-bottom: 40px;
+    margin-top: 240px;
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.photographer-image {
+    width: 45%;
+    max-width: 325px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+    max-width: 800px;
+    line-height: 1.5;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+/*-------------------------------------------------------------------------------*/
+/* Portfolio Section */
+.portfolio-section {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: #fffaf0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.portfolio-section h2 {
+    margin-bottom: 0px;
+    margin-top: 25px;
+    font-size: 2.8rem;
+    text-align: center;
+    color: #2c8074;
+}
+
+.portfolio-section p {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #000000;
+}
+
+.user-review {
+    position: relative;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin-top: 20px;
+    text-align: center;
+    padding: 0px 25px;
+    font-style: italic;
+    background-color: rgba(226, 248, 246, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.user-review p {
+    font-size: 20px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 230px);
+    grid-template-rows: repeat(1, 230px);
+    column-gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    top: 10%
+}
+
+.portfolio-grid img {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-grid img:hover {
+    transform: scale(1.6);
+    cursor: pointer;
+}
+
+
+/*------------------------------------------------------------------------------*/
+/* Services Section */
+.services-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: #f3fffc;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    margin-top: 250px;
+    color: #326b62;
+    font-weight: bold;
+}
+
+.services-section p {
+    font-size: 25px;
+    margin-bottom: 55px;
+    color: #000000;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photography-steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.photography-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+
+.photography-step-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.photography-step-title {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px !important;
+    color: rgb(29, 82, 82) !important
+}
+
+.scroll {
+    width: 80px;
+}
+
+/*-------------------------------------------------------------------------*/
+/* Contact Section */
+.contact-section {
+    background-color: #faf7ef;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    margin-top: 240px;
+    color: #3c6461;
+}
+
+.contact-section form {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-section label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    text-align: left;
+    display: block;
+    color: #555;
+}
+
+.contact-section h4 {
+    font-size: 25px;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+    outline: none;
+    border-color: #3dcabe;
+}
+
+.contact-section textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.contact-section button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #7cc7c1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section button:hover {
+    background-color: #5d8078;
+}
+
+/*---------------------------------------------------------------------*/
+
+@media screen and (max-width: 1650px) {
+    .photographer-page section {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero-section {
+        height: auto;
+    }
+
+    .about-section {
+        height: auto;
+    }
+
+    .services-section {
+        height: auto;
+    }
+
+    .portfolio-section {
+        height: auto;
+    }
+
+    .contact-section {
+        height: auto;
+    }
+
+    .portfolio-section h2 {
+        padding-top: 220px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 230px);
+        grid-template-rows: repeat(2, 230px);
+        gap: 40px;
+        margin-top: 60px;
+        padding-bottom: 150px;
+    }
+
+    .portfolio-grid img {
+        width: 230px;
+        height: 230px;
+    }
+
+    .scroll {
+        padding-bottom: 100px;
+    }
+
+}
+
+@media screen and (max-width: 1500px) {
+    .scroll-buttons {
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+    }
+
+    .scroll-button {
+        width: 250px;
+        padding: 12px 12px;
+    }
+
+    .scroll-down {
+        width: 90px;
+        margin-top: 805PX;
+    }
+
+}
+
+@media screen and (max-width: 1100px) {
+    .hero-text {
+        top: 25%;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .scroll-buttons {
+        top: 67%;
+    }
+
+    .photographer-image {
+        width: 50%;
+        max-width: 275px;
+    }
+
+    .about-section h2 {
+        margin-bottom: 50px;
+        margin-top: 200px;
+    }
+
+    .about-section p {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .hero-text {
+        top: 18%;
+    }
+
+    .hero-text h1 {
+        font-size: 3.0rem;
+    }
+
+    .scroll-buttons {
+        top: 63%;
+    }
+
+    .photographer-image {
+        width: 40%;
+        max-width: 265px;
+    }
+
+    .about-section h2 {
+        margin-bottom: 80px;
+        margin-top: 100px;
+    }
+
+    .about-section p {
+        margin-top: 100px;
+        font-size: 1.1rem;
+    }
+
+
+    .portfolio-section h2 {
+        padding-top: 150px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 230px);
+        grid-template-rows: repeat(3, 230px);
+    }
+
+
+    .services-section h2 {
+        margin-top: 150px;
+    }
+
+    .contact-section form {
+        width: 99%;
+        padding: 45px;
+        max-width: 350px;
+        margin-bottom: 50px;
+    }
+
+    .contact-section h2 {
+        margin-bottom: 80px;
+        margin-top: 120px;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-text p {
+        font-size: 1.6rem;
+    }
+
+    .scroll-buttons {
+        top: 65%;
+    }
+
+    .photographer-image {
+        width: 39%;
+        max-width: 260px;
+    }
+
+    .about-section h2 {
+        margin-bottom: 80px;
+        margin-top: 100px;
+    }
+
+    .about-section p {
+        margin-top: 100px;
+        font-size: 1.1rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(1, 230px);
+        grid-template-rows: repeat(6, 230px);
+    }
+
+}
