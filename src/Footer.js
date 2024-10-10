@@ -13,7 +13,6 @@ const Footer = () => {
             <div class="footer-content">
                 <ul class="footer-links">
                     <li><a href="/about">About Us</a></li>
-                    <li><a href="/services">Services</a></li>
                     <li><a href="/contact">Contact Us</a></li>
                     <li><a href="/privacy-policy">Privacy Policy</a></li>
                     <li><a href="/terms">Terms of Service</a></li>
