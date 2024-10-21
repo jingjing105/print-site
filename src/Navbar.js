@@ -65,7 +65,7 @@ const Navbar = () => {
 
                 {/* Navbar actions */}
                 <div className="navbar-actions">
-                    <a href="/help" className="help-btn">
+                    <a href="/help-center" className="help-btn">
                         <img src="/images/messenger.png" alt="Help Icon" className="icon" />
                     </a>
                     <a href="/login" className="signin-btn">

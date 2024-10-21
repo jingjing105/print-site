@@ -7,6 +7,7 @@ import SignUpPage from './SignUpPage'
 import PhotographerPage from './PhotographerPage';
 import Privacy from './PrivacyPage';
 import TermsService from './TermsService';
+import Help from './Help';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/photographer" element={<PhotographerPage />} />
         <Route path="/privacy-policy" element={<Privacy />} />
         <Route path="/terms" element={<TermsService />} />
+        <Route path="/help-center" element={<Help />} />
     </Routes>
 </Router>
   );
