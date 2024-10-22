@@ -111,7 +111,8 @@
 .cart-btn,
 .folder-btn,
 .help-btn,
-.user-icon {
+.user-icon,
+.workspace-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,13 +138,15 @@
 .cart-btn:hover,
 .folder-btn:hover,
 .help-btn:hover,
-.user-icon:hover {
+.user-icon:hover,
+.workspace-icon:hover {
   border: 2px solid rgb(136, 96, 173);
 }
 
 /* Navbar.css */
 
-.user-icon {
+.user-icon,
+.workspace-icon {
   position: relative;
 }
 
@@ -161,11 +164,6 @@
   flex-direction: column;
   padding: 10px 30px;
   transition: visibility 0s, opacity 0.2s ease;
-}
-
-.dropdown-overlay p {
-  margin: 0;
-  font-weight: bold;
 }
 
 .dropdown-overlay a {
@@ -186,6 +184,7 @@
   font-size: 20px;
   padding: 5px 50px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .dropdown-overlay .username,
@@ -411,6 +410,9 @@
     display: none;
   }
   .user-icon {
+    display: none;
+  }
+  .workspace-icon {
     display: none;
   }
 

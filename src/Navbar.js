@@ -110,7 +110,7 @@ const Navbar = () => {
               {isDropdownOpen && (
                 <div className="dropdown-overlay">
                   <a href="/my-account" className="username">
-                    <p>{getUsername(user.email)}</p>
+                    {getUsername(user.email)}
                   </a>
                   <hr />
                   <a href="/my-account/account-settings">Account Settings</a>
@@ -118,6 +118,7 @@ const Navbar = () => {
                   <a href="/my-account/payment-delivery">
                     Payment and Delivery
                   </a>
+                  <a href="/tracking">Track your Order</a>
                   <hr />
                   <button onClick={handleLogout}>Logout</button>
                 </div>
@@ -125,12 +126,43 @@ const Navbar = () => {
             </div>
           ) : (
             <a href="/login" className="signin-btn">
-              <img src="/images/user.png" alt="Sign In Icon" className="icon" />
+              <img src="/images/user.png" alt="User Icon" className="icon" />
             </a>
           )}
-          <a href="/workspace" className="folder-btn">
-            <img src="/images/folder.png" alt="Folder Icon" className="icon" />
-          </a>
+
+          {user ? (
+            <a href="/workspace" className="folder-btn">
+              <img
+                src="/images/folder.png"
+                alt="Folder Icon"
+                className="icon"
+              />
+            </a>
+          ) : (
+            <div
+              className="workspace-icon"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}>
+              <a href="/workspace">
+                <img
+                  src="/images/folder.png"
+                  alt="Folder Icon"
+                  className="icon"
+                />
+              </a>
+              {isDropdownOpen && (
+                <div className="dropdown-overlay">
+                  <p>Sign in to access & save your project progress </p>
+                  <a href="/login">
+                    <button>SignIn</button>
+                  </a>
+                  <hr />
+                  <a href="/workspace">Continue as a Guest</a>
+                </div>
+              )}
+            </div>
+          )}
+
           <a href="/cart" className="cart-btn">
             <img
               src="/images/trolley-cart.png"
