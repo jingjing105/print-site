@@ -1,0 +1,296 @@
+/* General Page Styling */
+.poster-selling-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(255, 245, 255);
+}
+
+/*-----------------------------------------------------------------------------------------*/
+
+/*Page content is spread and the footer stays at the bottom */
+.poster-page {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  flex-grow: 1;
+  margin: 100px;
+  margin-bottom: 0;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+.image-preview {
+  margin-left: 150px;
+}
+
+.pcarousel {
+  position: relative;
+  text-align: center;
+}
+
+.pcarousel img {
+  width: 550px;
+  height: auto;
+  border-radius: 40px;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(127, 125, 129, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Thumbnail Styling */
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnails img {
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.thumbnails img.active-thumbnail {
+  border: 2px solid #000;
+  opacity: 1;
+}
+
+.thumbnails img:hover {
+  opacity: 1;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+/* Product Details Section */
+.product-details {
+  flex: 1;
+  max-width: 50%;
+  margin-right: 140px;
+}
+
+.product-details h2 {
+  font-size: 45px;
+  margin-top: 0;
+  font-family: 'bubblegum sans', cursive;
+  font-weight: bold;
+  color: rgb(122, 102, 163);
+}
+
+.product-details h3 {
+  font-size: 20px;
+  color: rgb(105, 105, 105);
+}
+
+.product-details label {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(105, 105, 105);
+}
+
+.poster-options {
+  margin-bottom: 20px;
+}
+
+.price-section {
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(91, 170, 115);
+}
+
+
+/* Dropdown Styling */
+.select-box {
+  width: 300px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid #dcdcdc;
+  font-size: 18px;
+  font-family: 'bubblegum sans', cursive;
+  color: rgb(105, 105, 105);
+  background-color: rgb(255, 249, 255);
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.select-box:focus {
+  border-color: rgb(134, 113, 153);
+  outline: none;
+  box-shadow: 0 0 5px rgb(134, 113, 153);
+}
+
+.select-box option {
+  padding: 10px;
+  font-family: 'bubblegum sans', cursive;
+}
+
+/*----------------------------------------------------------------------------*/
+.custom-size-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.custom-size-label {
+  margin-right: 10px;
+}
+
+.custom-size-input {
+  width: 200px;
+  padding: 10px 10px;
+  border-radius: 15px;
+  border: 1px solid #dcdcdc;
+  margin-right: 5px;
+  font-size: 18px;
+  font-family: 'bubblegum sans', cursive;
+  background-color: rgb(255, 249, 255);
+}
+
+.custom-size-input:focus {
+  border-color: rgb(134, 113, 153);
+  outline: none;
+  box-shadow: 0 0 5px rgb(134, 113, 153);
+}
+
+.separator {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(105, 105, 105);
+  margin: 0 5px;
+}
+
+
+.create-btn {
+  margin-top: 10px;
+  padding: 15px 60px;
+  border-radius: 20px;
+  border: none;
+  font-family: 'bubblegum sans', cursive;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(172, 152, 211);
+  cursor: pointer;
+}
+
+.create-btn:hover {
+  background-color: rgb(134, 113, 153);
+}
+
+/*-------------------------------------------------------------------------------------------*/
+.nav-tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-bottom: 2px solid #ccc;
+  padding: 0;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.nav-tabs .tab {
+  margin-left: 200px;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: rgb(105, 105, 105);
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  background: none;
+  outline: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-tabs .tab:hover,
+.nav-tabs .tab.active-tab {
+  color: #a86ecf;
+  border-bottom: 2px solid #9970b4;
+}
+
+.tab-pane {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-left: 350px;
+  margin-bottom: 50px;
+}
+
+.tab-pane-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.tab-pane-text h2,
+.tab-pane-text2 h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(122, 102, 163);
+}
+
+.tab-pane-text h3,
+.tab-pane-text2 h3 {
+  color: rgb(99, 93, 110);
+}
+
+.tab-pane p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgb(105, 105, 105);
+}
+
+.posterexample {
+  width: 420px;
+  height: auto;
+  border-radius: 30px;
+  margin-top: 25px;
+  margin-right: 350px;
+}
+
+.choosepaper {
+  width: 800px;
+  height: auto;
+  border-radius: 30px;
+  margin-bottom: 50px;
+  margin-top: 70px;
+  margin-right: 100px;
+}
+
+.tab-pane-text2 {
+  flex: 1;
+  max-width: 1000px;
+  margin-left: 150px;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Footer Styling */
+.poster-selling-page footer {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}

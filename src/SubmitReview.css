@@ -1,0 +1,29 @@
+.submit-review {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.submit-review form {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-review label {
+    margin-top: 10px;
+}
+
+.submit-review input,
+.submit-review textarea {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.submit-review button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #2F4F4F;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
