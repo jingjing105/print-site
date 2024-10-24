@@ -1,0 +1,16 @@
+.account-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.account-page {
+  display: flex;
+  flex: 1;
+}
+
+.account-main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}

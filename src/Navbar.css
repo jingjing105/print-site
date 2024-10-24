@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Restco';
-  src: url('../public/fonts/Restco.ttf') format('truetype');
+  font-family: "Restco";
+  src: url("../public/fonts/Restco.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -43,7 +43,7 @@
 }
 
 .brand-name {
-  font-family: 'Restco', sans-serif;
+  font-family: "Restco", sans-serif;
   font-size: 27px;
   margin-right: 30px;
   color: rgb(0, 0, 0);
@@ -67,7 +67,7 @@
   border-radius: 10px;
   background-color: #ffffff;
   color: #000000;
-  font-family: 'Bubblegum Sans', cursive;
+  font-family: "Bubblegum Sans", cursive;
 }
 
 .search-input:focus {
@@ -110,7 +110,9 @@
 .signin-btn,
 .cart-btn,
 .folder-btn,
-.help-btn {
+.help-btn,
+.user-icon,
+.workspace-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,8 +137,79 @@
 .signin-btn:hover,
 .cart-btn:hover,
 .folder-btn:hover,
-.help-btn:hover {
+.help-btn:hover,
+.user-icon:hover,
+.workspace-icon:hover {
   border: 2px solid rgb(136, 96, 173);
+}
+
+/* Navbar.css */
+
+.user-icon,
+.workspace-icon {
+  position: relative;
+}
+
+.dropdown-overlay {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px;
+  transition: visibility 0s, opacity 0.2s ease;
+}
+
+.dropdown-overlay a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 0;
+  font-size: 17px;
+}
+
+.dropdown-overlay button,
+.side-navbar-links button {
+  background: rgb(149, 124, 177);
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  font-family: "Bubblegum Sans", cursive;
+  font-size: 20px;
+  padding: 5px 50px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.dropdown-overlay .username,
+.side-navbar-links .username {
+  color: rgb(152, 119, 189);
+  font-family: "Bubblegum Sans", cursive;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.dropdown-overlay a:hover,
+.dropdown-overlay .username:hover {
+  color: #7b00ff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.dropdown-overlay button:hover,
+.side-navbar-links button:hover {
+  background-color: #7b00ff;
+}
+
+.side-navbar-links button {
+  margin-left: 20px;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -164,7 +237,7 @@
 .navbar-links a {
   color: rgb(0, 0, 0);
   text-decoration: none;
-  font-family: 'Bubblegum Sans', cursive;
+  font-family: "Bubblegum Sans", cursive;
   font-size: 20px;
 }
 
@@ -226,7 +299,7 @@
 .side-navbar a {
   color: black;
   text-decoration: none;
-  font-family: 'Bubblegum Sans', cursive;
+  font-family: "Bubblegum Sans", cursive;
   font-size: 20px;
   text-align: left;
   padding: 15px 20px 15px 20px;
@@ -328,13 +401,18 @@
 
 /* Media Query for smaller screens */
 @media (max-width: 768px) {
-
   /* Hide the regular navbar links, buttons, search, brand name and logo */
   .navbar-links {
     display: none;
   }
 
   .signin-btn {
+    display: none;
+  }
+  .user-icon {
+    display: none;
+  }
+  .workspace-icon {
     display: none;
   }
 
