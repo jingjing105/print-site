@@ -25,11 +25,9 @@ const Navbar = () => {
     return "";
   };
 
-  // State to control the sidebar visibility
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [isSearchOverlayOpen, setSearchOverlayOpen] = useState(false);
 
-  // Function to toggle sidebar visibility
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
@@ -39,7 +37,6 @@ const Navbar = () => {
   };
 
   const handleResize = () => {
-    // Close sidebar if window width is greater than 768px
     if (window.innerWidth > 768) {
       setSidebarOpen(false);
       setSearchOverlayOpen(false);
@@ -47,7 +44,6 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    // event listener for window resize
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -104,23 +100,21 @@ const Navbar = () => {
               className="user-icon"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}>
-              <a href="my-account">
+              <a href="/account">
                 <img src="/images/user.png" alt="User Icon" className="icon" />
               </a>
               {isDropdownOpen && (
                 <div className="dropdown-overlay">
-                  <a href="/my-account" className="username">
+                  <a href="/account" className="username">
                     {getUsername(user.email)}
                   </a>
                   <hr />
-                  <a href="/my-account/account-settings">Account Settings</a>
-                  <a href="/my-account/order-history">Order History</a>
-                  <a href="/my-account/payment-delivery">
-                    Payment and Delivery
-                  </a>
+                  <a href="/account/account-settings">Account Settings</a>
+                  <a href="/account/order-history">Order History</a>
+                  <a href="/account/payment-delivery">Payment and Delivery</a>
                   <a href="/tracking">Track your Order</a>
                   <hr />
-                  <button onClick={handleLogout}>Logout</button>
+                  <button onClick={handleLogout}>Sign Out</button>
                 </div>
               )}
             </div>
@@ -154,7 +148,7 @@ const Navbar = () => {
                 <div className="dropdown-overlay">
                   <p>Sign in to access & save your project progress </p>
                   <a href="/login">
-                    <button>SignIn</button>
+                    <button>Sign In</button>
                   </a>
                   <hr />
                   <a href="/workspace">Continue as a Guest</a>
@@ -201,13 +195,13 @@ const Navbar = () => {
           <hr className="sidebar-divider" />
           {user ? (
             <>
-              <a href="./my-account" className="username">
+              <a href="/account" className="username">
                 <li>
                   <p>{getUsername(user.email)}</p>
                 </li>
               </a>
               <li>
-                <button onClick={handleLogout}>Logout</button>
+                <button onClick={handleLogout}>Sign Out</button>
               </li>
             </>
           ) : (

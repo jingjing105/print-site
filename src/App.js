@@ -33,7 +33,8 @@ function App() {
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<TermsService />} />
           <Route path="/help-center" element={<Help />} />
-          <Route path="/my-account" element={<AccountPage />} />
+          <Route path="/account" element={<AccountPage />} />
+          <Route path="/account/*" element={<AccountPage />} />
         </Routes>
       </Router>
     </UserProvider>
