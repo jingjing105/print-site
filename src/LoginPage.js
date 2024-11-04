@@ -24,7 +24,13 @@ const LoginPage = () => {
                 await setPersistence(auth, browserSessionPersistence);
             }
             const result = await signInWithPopup(auth, googleProvider);
+            const idToken = await result.user.getIdToken(true);
             console.log(result.user);
+            await fetch('http://localhost:5000/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ firebaseToken: idToken }), // Send token to backend
+            });
             navigate('/');
         } catch (error) {
             if (error.code === 'auth/popup-closed-by-user') {
@@ -40,26 +46,34 @@ const LoginPage = () => {
         setError('');
         setMessage('');
         try {
-            if (stayLoggedIn) {
-                await setPersistence(auth, browserLocalPersistence);
-            } else {
-                await setPersistence(auth, browserSessionPersistence);
-            }
-            await signInWithEmailAndPassword(auth, email, password);
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+
+            // Get Firebase Token
+            const idToken = await user.getIdToken(true);
+
+            // Send token to backend
+            const response = await fetch('http://localhost:5000/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ firebaseToken: idToken }), // Send token to backend
+            });
+
+            const data = await response.json();
+            console.log('User synced to PostgreSQL:', data);
+
             setMessage('Successfully Logged In! Redirecting to homepage...');
             setError('');
             setTimeout(() => {
                 navigate('/');
             }, 2000);
         } catch (error) {
-            if (error.code === 'auth/invalid-credential') {
-                setError('There was an issue with your login. Please check your credentials and try again.');
-            }
-            else {
-                setError('An error occurred while signing in. Please try again.');
-            }
+            setError('An error occurred while signing in. Please try again.');
         }
     };
+
 
     const handleForgotPassword = async () => {
         setError('');

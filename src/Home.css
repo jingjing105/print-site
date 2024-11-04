@@ -15,8 +15,9 @@
 }
 
 hr {
-  border: none; /* Remove default border */
-  height: 1px; /* Set height of the line */
-  background-color: rgb(218, 194, 224); /* Set the color of the line */
-  margin: 20px 0; /* Set margin above and below the line */
+  border: none; 
+  height: 1px; 
+  background-color: rgb(218, 194, 224); 
+  margin: 20px 0; 
 }
+

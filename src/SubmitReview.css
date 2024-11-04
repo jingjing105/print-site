@@ -1,29 +1,157 @@
 .submit-review {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 100px;
+    font-family: Arial, sans-serif;
+    text-align: left;
 }
 
-.submit-review form {
+.submit-review h2 {
+    font-family: 'bubblegum sans', cursive;
+    font-size: 35px;
+    color: rgb(122, 102, 163);
+}
+
+.rating {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.star {
+    cursor: pointer;
+    color: #ccc;
+}
+
+.star.filled {
+    color: #FFD700;
+}
+
+.submit-review input[type="text"],
+.reviewText {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.reviewText {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-review input[type="text"]:focus,
+.reviewText:focus {
+    outline: none;
+    border: 1px solid rgb(134, 113, 153);
+    box-shadow: 0 0 5px rgba(106, 13, 173, 0.5);
+}
+
+.recommend-checkbox {
+    margin: 10px 0;
+    font-size: 15px;
+    color: rgb(105, 105, 105);
+    font-weight: bold;
+}
+
+.media-buttons {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 0;
 }
 
-.submit-review label {
-    margin-top: 10px;
+.add-photo,
+.add-video {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgb(83, 83, 83);
+    font-size: 15px;
 }
 
-.submit-review input,
-.submit-review textarea {
-    padding: 10px;
-    margin-top: 5px;
+
+.add-photo:hover,
+.add-video:hover {
+    background-color: rgb(172, 152, 211);
+    color: white;
 }
 
-.submit-review button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #2F4F4F;
+.previews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.preview {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview img,
+.preview video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.preview button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(255, 0, 0, 0.8);
     color: white;
     border: none;
+    border-radius: 50%;
     cursor: pointer;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+
+.submit-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-family: 'bubblegum sans', cursive;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(172, 152, 211);
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: rgb(134, 113, 153);
 }

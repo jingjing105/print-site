@@ -124,9 +124,7 @@ const PosterPage = () => {
               <p>Whether you need a small poster for a personal project or a large banner for a special event, we offer high-quality prints that cater to all your needs.</p>
 
               <p>Choose from a range of standard sizes or create your own custom dimensions. </p>
-
-              <p>
-                <p>Decide the orientation of your poster: </p>
+              <p>Decide the orientation of your poster:
                 <ul>
                   <li>
                     Vertical (tall)
@@ -157,7 +155,7 @@ const PosterPage = () => {
       case 'options':
         return (
           <div id="options" className="tab-pane">
-            <div className="tab-pane-text">
+            <div className="tab-pane-text2">
               <h2>Choose the perfect paper type:</h2>
 
               <div className="paper-option">
@@ -182,7 +180,7 @@ const PosterPage = () => {
       case 'faq':
         return (
           <div id="faq" className="tab-pane">
-            <div className="tab-pane-text2">
+            <div className="tab-pane-text3">
               <h2>Frequently Asked Questions</h2>
 
               <div className="faq-item">
@@ -219,20 +217,6 @@ const PosterPage = () => {
                   Standard shipping typically takes 5-7 business days. Expedited options are available for faster delivery.
                 </p>
               </div>
-
-              <div className="faq-item">
-                <h3>Do you offer design services?</h3>
-                <p>
-                  Yes, we have an in-house design team that can help you create a custom poster. Contact us for more details on pricing and design consultation.
-                </p>
-              </div>
-
-              <div className="faq-item">
-                <h3>Can I request a proof before printing?</h3>
-                <p>
-                  Yes, we can provide a digital proof for your review before printing. Please indicate this request when placing your order.
-                </p>
-              </div>
             </div>
           </div>
         );
@@ -244,7 +228,6 @@ const PosterPage = () => {
     <div className="poster-selling-page">
       <Navbar />
       <div className="poster-page">
-
         <div className="image-preview">
           <div className="pcarousel">
             <img src={images[currentIndex]} alt={`Poster Preview ${currentIndex + 1}`} />
@@ -269,8 +252,6 @@ const PosterPage = () => {
             ))}
           </div>
         </div>
-
-
         <div className="product-details">
           <h2>Poster Printing</h2>
           <div className="poster-options">

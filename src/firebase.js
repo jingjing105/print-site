@@ -22,7 +22,13 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-
+setPersistence(auth, browserLocalPersistence)
+  .then(() => {
+    console.log("Firebase auth persistence set to LOCAL.");
+  })
+  .catch((error) => {
+    console.error("Error setting Firebase auth persistence:", error);
+  });
 const googleProvider = new GoogleAuthProvider();
 
 export {
