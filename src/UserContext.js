@@ -9,6 +9,7 @@ export const useUser = () => useContext(UserContext);
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [redirectAfterLogin, setRedirectPath] = useState(localStorage.getItem('redirectAfterLogin') || null);
   const auth = getAuth(app);
 
   useEffect(() => {
@@ -24,8 +25,14 @@ export const UserProvider = ({ children }) => {
     setUser(null);
   };
 
+  const setRedirect = (path) => {
+    setRedirectPath(path);
+    localStorage.setItem('redirectAfterLogin', path); 
+  };
+
+
   return (
-    <UserContext.Provider value={{ user, logout }}>
+    <UserContext.Provider value={{ user, logout, redirectAfterLogin, setRedirectPath}}>
       {children}
     </UserContext.Provider>
   );

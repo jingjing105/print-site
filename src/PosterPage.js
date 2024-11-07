@@ -80,33 +80,40 @@ const PosterPage = () => {
   const finishPrices = { Matte: 0.00, 'Semi-Gloss': 2.00, Glossy: 3.00 };
 
   const predefinedPrices = {
-    '8.5" x 11"': 5.99,
-    '11" x 17"': 7.99,
-    '16" x 20"': 9.99,
-    '18" x 24"': 12.99,
-    '22" x 28"': 15.99,
-    '24" x 36"': 18.99,
-    '28" x 40"': 24.99,
-    '36" x 48"': 27.99,
-    '40" x 60"': 29.99,
+    '8.5" x 11"': 4.37,
+    '11" x 17"': 6.24,
+    '16" x 20"': 8.90,
+    '18" x 24"': 11.14,
+    '22" x 28"': 14.82,
+    '24" x 36"': 19.78,
+    '28" x 40"': 24.90,
+    '36" x 48"': 37.06,
+    '40" x 60"': 50.50,
   };
 
 
   const calculatePrice = () => {
-    let basePrice;
+    let basePrice = 2.50; 
+  
     if (useCustomSize) {
       const width = parseFloat(customWidth) || 0;
       const height = parseFloat(customHeight) || 0;
+  
       if (width > 60 || width <= 0 || height <= 0) {
-        return 'Invalid Size';
+        return <span className="invalid-size-message">Invalid Size</span>;
       }
-      basePrice = (width * height * 0.05).toFixed(2);
+  
+      const additionalCost = (width * height * 0.020);
+      basePrice += additionalCost;
     } else {
       basePrice = predefinedPrices[selectedSize];
     }
+  
     const finishPrice = finishPrices[selectedFinish];
     return (parseFloat(basePrice) + finishPrice).toFixed(2);
   };
+  
+  
 
   const [activeTab, setActiveTab] = useState('overview');
 

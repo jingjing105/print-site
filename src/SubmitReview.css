@@ -155,3 +155,10 @@
 .submit-btn:hover {
     background-color: rgb(134, 113, 153);
 }
+
+@media (max-width: 600px) {
+    .submit-review {
+        max-width: 350px;
+        margin-top: 150px;
+    }
+}

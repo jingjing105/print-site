@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import Modal from 'react-modal';
+import { useUser } from "./UserContext";
 import './ReviewSection.css';
 
 const ReviewSection = () => {
@@ -18,6 +19,7 @@ const ReviewSection = () => {
     const [mediaItems, setMediaItems] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [sortOption, setSortOption] = useState('Most Recent');
+    const { userIsLoggedIn } = useUser();
 
     const [currentPage, setCurrentPage] = useState(1);
     const reviewsPerPage = 5;
@@ -25,6 +27,7 @@ const ReviewSection = () => {
     const reviewSectionRef = useRef(null);
 
     const navigate = useNavigate();
+    const { user, setRedirectPath } = useUser();
 
     useEffect(() => {
         const fetchReviews = async () => {
@@ -71,7 +74,12 @@ const ReviewSection = () => {
     };
 
     const handleWriteReview = () => {
-        navigate('/submit-review');
+        if (!userIsLoggedIn) {
+            setRedirectPath("/submit-review");
+            navigate('/login', { state: { from: '/submit-review' } });
+          } else {
+            navigate('/submit-review');
+          }
     };
 
     const openModal = (mediaIndex) => {
@@ -180,13 +188,36 @@ const ReviewSection = () => {
             <hr />
 
             {/* Media Carousel */}
+            <h2 className="media-carousel-header">Reviews with images</h2>
             <div className="media-carousel">
-                <h2>Reviews with images</h2>
+
                 <Swiper
                     slidesPerView={6}
-                    spaceBetween={10}
-                    navigation={true}
+                    navigation={{
+                        prevEl: '.custom-prev',
+                        nextEl: '.custom-next',
+                    }}
                     modules={[Navigation]}
+                    breakpoints={{
+                        1500: {
+                            slidesPerView: 6
+                        },
+                        1200: {
+                            slidesPerView: 5
+                        },
+                        1000: {
+                            slidesPerView: 4,
+                        },
+                        700: {
+                            slidesPerView: 3,
+                        },
+                        600: {
+                            slidesPerView: 2,
+                        },
+                        400: {
+                            slidesPerView: 2,
+                        }
+                    }}
                 >
                     {mediaItems.map((media, index) => (
                         <SwiperSlide key={index}>
@@ -208,6 +239,8 @@ const ReviewSection = () => {
                         </SwiperSlide>
                     ))}
                 </Swiper>
+                <button className="custom-prev">⟨</button>
+                <button className="custom-next">⟩</button>
             </div>
 
             {/* Modal */}
@@ -375,7 +408,6 @@ const ReviewSection = () => {
                         </button>
                     </div>
                 </div>
-
             </div>
         </div>
     );

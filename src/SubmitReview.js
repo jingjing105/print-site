@@ -42,6 +42,11 @@ const SubmitReview = () => {
 
     const handlePhotoChange = (e) => {
         const files = Array.from(e.target.files);
+        if (photos.length + videos.length + files.length > 3) {
+            setMessage({ type: 'error', text: "You can only add up to 3 media items." });
+            setTimeout(() => setMessage(null), 3000);
+            return;
+        }
         const previews = files.map(file => URL.createObjectURL(file));
         setPhotos(prevPhotos => [...prevPhotos, ...files]);
         setPhotoPreviews(prevPreviews => [...prevPreviews, ...previews]);
@@ -49,6 +54,11 @@ const SubmitReview = () => {
 
     const handleVideoChange = (e) => {
         const files = Array.from(e.target.files);
+        if (photos.length + videos.length + files.length > 3) {
+            setMessage({ type: 'error', text: "You can only add up to 3 media items." });
+            setTimeout(() => setMessage(null), 3000);
+            return;
+        }
         const previews = files.map(file => URL.createObjectURL(file));
         setVideos(prevVideos => [...prevVideos, ...files]);
         setVideoPreviews(prevPreviews => [...prevPreviews, ...previews]);

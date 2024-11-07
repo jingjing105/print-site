@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { auth, googleProvider, signInWithPopup, signInWithEmailAndPassword, setPersistence, browserLocalPersistence, browserSessionPersistence, sendPasswordResetEmail } from './firebase';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useUser } from "./UserContext";
 import './LoginPage.css';
 
 const LoginPage = () => {
+    const { user, setRedirectPath, redirectAfterLogin } = useUser();
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from || '/';
     const [stayLoggedIn, setStayLoggedIn] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState('');
@@ -15,6 +19,17 @@ const LoginPage = () => {
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
+
+    useEffect(() => {
+        if (user) {
+            const redirectPath = redirectAfterLogin || from;
+            navigate(redirectPath, { replace: true });  
+        }
+    }, [user, navigate, redirectAfterLogin, from]);
+
+    if (user) {
+        return null;  
+    }
 
     const handleGoogleSignIn = async () => {
         try {
@@ -31,7 +46,9 @@ const LoginPage = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ firebaseToken: idToken }), // Send token to backend
             });
-            navigate('/');
+            const redirectPath = redirectAfterLogin || from;
+            setRedirectPath(null); // Clear the redirect path
+            navigate(redirectPath);
         } catch (error) {
             if (error.code === 'auth/popup-closed-by-user') {
                 setError('The sign-in popup was closed before completing the process.');
@@ -66,9 +83,11 @@ const LoginPage = () => {
 
             setMessage('Successfully Logged In! Redirecting to homepage...');
             setError('');
+            const redirectPath = redirectAfterLogin || from;
+            setRedirectPath(null); 
             setTimeout(() => {
-                navigate('/');
-            }, 2000);
+                navigate(redirectPath);
+            }, 2000); 
         } catch (error) {
             setError('An error occurred while signing in. Please try again.');
         }
